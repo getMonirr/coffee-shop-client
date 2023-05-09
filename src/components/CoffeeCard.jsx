@@ -1,6 +1,7 @@
 import { AiFillEye } from "react-icons/ai";
 import { HiPencil } from "react-icons/hi2";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
@@ -53,9 +54,12 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         <button className="btn rounded-lg p-[10] bg-cs-btn-bg border-none">
           <AiFillEye size={20} color="white" />
         </button>
-        <button className="btn rounded-lg p-[10] bg-slate-800 border-none">
+        <Link
+          to={`/edit-coffee/${_id}`}
+          className="btn rounded-lg p-[10] bg-slate-800 border-none"
+        >
           <HiPencil size={20} color="white" />
-        </button>
+        </Link>
         <button
           onClick={() => handleDelete(_id)}
           className="btn rounded-lg p-[10] bg-red-500 border-none"
